@@ -1,0 +1,38 @@
+# ./pyproject.toml
+[project]
+name = "building-code-assistant"
+version = "0.1.0"
+description = "A RAG system to query local building codes using Ollama and Nix."
+requires-python = ">=3.11"
+
+# These are the core dependencies for your RAG pipeline.
+dependencies = [
+    # LangChain Framework
+    "langchain",
+    "langchain-chroma",
+    "langchain-community",
+    "langchain-ollama",
+    "langchain-google-genai",
+
+    # Document Processing
+    "unstructured",
+
+    # Environment & Configuration
+    "python-dotenv",
+
+    # Build tools required by some legacy packages
+    "wheel",
+    "setuptools",
+]
+
+# These are optional sets of dependencies.
+[project.optional-dependencies]
+# Dependencies for the Jupyter Notebook / interactive development
+dev = [
+    "jupyterlab",
+    "ipykernel",
+]
+# Dependencies for the future web interface
+ui = [
+    "gradio",
+]
